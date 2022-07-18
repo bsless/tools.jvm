@@ -5,7 +5,7 @@
   <artifactId>tools.jvm</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <name>io.github.bsless/tools.jvm</name>
-  <description>FIXME: my new library.</description>
+  <description>Tools for introspecting the current JVM process.</description>
   <url>https://github.com/bsless/tools.jvm</url>
   <licenses>
     <license>
@@ -15,7 +15,7 @@
   </licenses>
   <developers>
     <developer>
-      <name>Bsless</name>
+      <name>Ben Sless</name>
     </developer>
   </developers>
   <scm>
