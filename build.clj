@@ -4,9 +4,7 @@
             [org.corfield.build :as bb]))
 
 (def lib 'io.github.bsless/tools.jvm)
-(def version "0.1.0-SNAPSHOT")
-#_ ; alternatively, use MAJOR.MINOR.COMMITS:
-(def version (format "1.0.%s" (b/git-count-revs nil)))
+(def version (format "0.0.%s" (b/git-count-revs nil)))
 
 (defn test "Run the tests." [opts]
   (bb/run-tests opts))
