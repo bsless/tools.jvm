@@ -49,12 +49,12 @@ jobs:
         run: clojure -T:build ci :snapshot true
         shell: bash
 
-      # - name: Deploy snapshot to Clojars
-      #   run: clojure -T:build deploy :snapshot true
-      #   shell: bash
-      #   env:
-      #     CLOJARS_PASSWORD: ${{secrets.DEPLOY_TOKEN}}
-      #     CLOJARS_USERNAME: ${{secrets.DEPLOY_USERNAME}}
+      - name: Deploy snapshot to Clojars
+        run: clojure -T:build deploy :snapshot true
+        shell: bash
+        env:
+          CLOJARS_PASSWORD: ${{secrets.DEPLOY_TOKEN}}
+          CLOJARS_USERNAME: ${{secrets.DEPLOY_USERNAME}}
 
 
   build-and-test:
