@@ -2,38 +2,44 @@
 
 Tools for introspecting the current JVM process.
 
+Easily answer questions ranging from "what flags did my process start with?"
+to "Which of those 10 processes do I need to attach VisualVM to?"
+
 ## API docs
 
 See [API.md](./API.md)
 
-## Usage
+## Dependency
+
+### Deps
 
 ```clojure
-(require '[bsless.tools.jvm :as jvm])
+io.github.bsless/tools.jvm {:mvn/version "0.0.10-SNAPSHOT"}
 ```
 
-Run the project's tests (they'll fail until you edit them):
+### Leiningen
+
+```clojure
+[io.github.bsless/tools.jvm "0.0.10-SNAPSHOT"]
+```
+
+## Development
+
+Run the project's tests:
 
     $ clojure -T:build test
 
-Run the project's CI pipeline and build a JAR (this will fail until you edit the tests to pass):
+Run the project's CI pipeline and build a JAR:
 
     $ clojure -T:build ci
-
-This will produce an updated `pom.xml` file with synchronized dependencies inside the `META-INF`
-directory inside `target/classes` and the JAR in `target`. You can update the version (and SCM tag)
-information in generated `pom.xml` by updating `build.clj`.
 
 Install it locally (requires the `ci` task be run first):
 
     $ clojure -T:build install
+    
+Generate docs:
 
-Deploy it to Clojars -- needs `CLOJARS_USERNAME` and `CLOJARS_PASSWORD` environment
-variables (requires the `ci` task be run first):
-
-    $ clojure -T:build deploy
-
-Your library will be deployed to io.github.bsless/tools.jvm on clojars.org by default.
+    $ clojure -M:quickdoc
 
 ## License
 
