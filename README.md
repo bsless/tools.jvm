@@ -16,13 +16,13 @@ See [API.md](./API.md)
 ### Deps
 
 ```clojure
-io.github.bsless/tools.jvm {:mvn/version "0.0.10-SNAPSHOT"}
+io.github.bsless/tools.jvm {:mvn/version "0.0.14"}
 ```
 
 ### Leiningen
 
 ```clojure
-[io.github.bsless/tools.jvm "0.0.10-SNAPSHOT"]
+[io.github.bsless/tools.jvm "0.0.14"]
 ```
 
 ## Development
