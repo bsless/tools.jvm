@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/io.github.bsless/tools.jvm.svg)](https://clojars.org/io.github.bsless/tools.jvm)
+
 # io.github.bsless/tools.jvm
 
 Tools for introspecting the current JVM process.
