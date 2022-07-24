@@ -11,6 +11,13 @@ to "Which of those 10 processes do I need to attach VisualVM to?"
 
 See [API.md](./API.md)
 
+## Also see
+
+[henryw374/tools.jvm](https://github.com/henryw374/tools.jvm), with an
+identical name but slightly different non-overlapping use cases.
+
+Use both!
+
 ## Dependency
 
 ### Deps
