@@ -64,13 +64,32 @@
 
 (defn over8? [] (not (str/starts-with? (java-version) "1.")))
 
+(def ^:private get-process-id
+  (delay
+    (when (over8?)
+      (fn [] (.pid (java.lang.ProcessHandle/current))))))
+
+(defn- get-runtime-pid [] (-> (runtime-bean) .getName (str/split #"@") first))
+
+(def ^:private get-pid-str
+  (delay
+    (if (over8?)
+      (fn [] (str (@get-process-id)))
+      (fn [] (get-runtime-pid)))))
+
+(def ^:private get-pid
+  (delay
+    (if (over8?)
+      (fn ^long [] (@get-process-id))
+      (fn ^long [] (Long/parseLong (get-runtime-pid))))))
+
 (defn pid
   "Get current JVM's PID as a string."
-  []
-  (-> (runtime-bean)
-      .getName
-      (str/split #"@")
-      first))
+  [] ((deref get-pid-str)))
+
+(defn pid-long
+  "Get current JVM's PID as a long."
+  [] ((deref get-pid)))
 
 (defonce ^:private +vm-proc+ (atom nil))
 (comment @+vm-proc+)
