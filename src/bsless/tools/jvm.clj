@@ -62,6 +62,8 @@
 (defonce ^:private +java-version+ (delay (get (properties) "java.version")))
 (defn java-version [] @+java-version+)
 
+(defn over8? [] (not (str/starts-with? (java-version) "1.")))
+
 (defn pid
   "Get current JVM's PID as a string."
   []
