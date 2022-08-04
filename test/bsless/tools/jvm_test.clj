@@ -36,3 +36,7 @@
   (let [id (jvm/pid)]
     (t/is (string? id))
     (t/is (nat-int? (Long/valueOf id)))))
+
+(t/deftest pid-long
+  (let [id (jvm/pid-long)]
+    (t/is (nat-int? id))))
